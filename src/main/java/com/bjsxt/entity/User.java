@@ -7,16 +7,15 @@ public class User implements Serializable {
     private Integer uid;
     private String uname;
     private String pwd;
-    private String phone;
+
 
     public User() {
     }
 
-    public User(Integer uid, String uname, String pwd, String phone) {
+    public User(Integer uid, String uname, String pwd) {
         this.uid = uid;
         this.uname = uname;
         this.pwd = pwd;
-        this.phone = phone;
     }
 
     public void setUid(Integer uid) {
