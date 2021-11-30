@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+        <properties resource="jdbc.properties"></properties>
+
+
+        <settings>
+            <setting name="logImpl" value="LOG4J"/>
+        </settings>
+
+       <typeAliases>
+            <package name="com.bjsxt.entity"></package>
+       </typeAliases>
+
+
+       <environments default="mysql">
+
+           <environment id="mysql">
+
+               <transactionManager type="JDBC"></transactionManager>
+
+               <dataSource type="POOLED">
+
+                   <property name="driver" value="${m_driver}"></property>
+
+                   <property name="url" value="${m_url}"></property>
+
+                   <property name="username" value="${m_uname}"></property>
+
+                   <property name="password" value="${m_pwd}"></property>
+
+               </dataSource>
+           </environment>
+       </environments>
+
+
+    <mappers>
+
+        <!--首先会找mapper包下的所有的[接口],然后去找和接口的名字相同的XML进行扫描-->
+        <package name="com.bjsxt.mapper"></package>
+
+    </mappers>
+    
+    
+</configuration>
+
